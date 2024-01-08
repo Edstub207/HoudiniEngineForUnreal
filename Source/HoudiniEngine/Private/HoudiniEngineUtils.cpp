@@ -7603,7 +7603,7 @@ FHoudiniEngineUtils::GetHoudiniEnginePluginDir()
 		return EnginePluginDir;
 
 	FString ProjectPluginDir = FPaths::ProjectPluginsDir() / TEXT("Runtime/HoudiniEngine/");
-	if (FPaths::DirectoryExists(ProjectPluginDir + "HoudiniEngine.uplugin"))
+	if (FPaths::FileExists(ProjectPluginDir + "HoudiniEngine.uplugin"))
 		return ProjectPluginDir;
 
 	TSharedPtr<IPlugin> HoudiniPlugin = IPluginManager::Get().FindPlugin(TEXT("HoudiniEngine"));
